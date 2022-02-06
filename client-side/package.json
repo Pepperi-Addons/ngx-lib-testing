@@ -6,7 +6,7 @@
         "start": "ng serve --port 4400 --live-reload=false",
         "single-spa": "ng serve --port 4400 --sourceMap=false --live-reload=false",
         "build": "ng build",
-        "build:single-spa": "ng build client-side --prod --sourceMap=false",
+        "build:single-spa": "ng build client-side --sourceMap=false",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
