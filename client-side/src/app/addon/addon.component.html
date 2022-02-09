@@ -1,6 +1,6 @@
-<pep-page-layout [addPadding]="false">
+<pep-page-layout [addPadding]="true">
     <ng-container pep-top-area>
-        <pep-top-bar title="Manage a list of todo's.">
+        <pep-top-bar title="NGX-lib Automation Testing Page">
             <div header-start-content>
                 <!-- Add components you want after the title -->
             </div>
@@ -11,9 +11,78 @@
     </ng-container>
 
     <ng-container pep-main-area>
-        <pep-generic-list title="You can create and edit this list here" [allowMultipleSelection]="true" [inline]="true" [dataSource]="listDataSource">
-        </pep-generic-list>
+        <div class="centered spaced">
+            <pep-button value="xtra small weak system button" styleType="weak" styleStateType="system" sizeType="xs"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra small weak system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="small weak system button" styleType="weak" styleStateType="system" sizeType="sm"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked small weak system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="medium weak system button" styleType="weak" styleStateType="system" sizeType="md"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked medium weak system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="large weak system button" styleType="weak" styleStateType="system" sizeType="lg"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked large weak system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large weak system button" styleType="weak" styleStateType="system" sizeType="xl"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large weak system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large weak-invert system button" styleType="weak-invert" styleStateType="system"
+                sizeType="xl" classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large weak-invert system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large regular system button" styleType="regular" styleStateType="system" sizeType="xl"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large regular system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large strong system button" styleType="strong" styleStateType="system" sizeType="xl"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large strong system button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large strong caution button" styleType="strong" styleStateType="caution" sizeType="xl"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large strong caution button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large strong success button" styleType="strong" styleStateType="success" sizeType="xl"
+                classNames="" [disabled]="false" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large strong success button')">
+            </pep-button>
+        </div>
+        <div class="centered spaced">
+            <pep-button value="xtra large strong success disabled" styleType="strong" styleStateType="success" sizeType="xl"
+                classNames="" [disabled]="true" iconName="undefined" iconPosition="end" [visible]="true"
+                onclick="console.log('clicked xtra large strong success button')">
+            </pep-button>
+        </div>
+
     </ng-container>
 </pep-page-layout>
 
 <pep-size-detector></pep-size-detector>
+
+
+
+<!-- disabled -->
