@@ -2,6 +2,7 @@
     "name": "client-side",
     "version": "0.0.0",
     "scripts": {
+        "fix-lint": "eslint --ext .ts . --fix",
         "ng": "ng",
         "start": "ng serve --port 4400 --live-reload=false",
         "single-spa": "ng serve --port 4400 --sourceMap=false --live-reload=false",
@@ -45,6 +46,7 @@
         "ngx-quill": "^14.0.0",
         "ngx-signaturepad": "0.0.9",
         "ngx-translate-multi-http-loader": "^3.0.0",
+        "prettier": "^2.5.1",
         "quill": "^1.3.7",
         "rxjs": "^6.6.2",
         "single-spa": "^5.9.1",
@@ -72,7 +74,13 @@
         "protractor": "~7.0.0",
         "ts-node": "~8.3.0",
         "tslint": "~6.1.0",
-        "typescript": "~4.2.4"
+        "typescript": "~4.2.4",
+        "@typescript-eslint/eslint-plugin": "^3.5.0",
+        "@typescript-eslint/parser": "^3.5.0",
+        "chromedriver": "^97.0.4",
+        "eslint": "^7.3.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-prettier": "^3.1.4"
     },
     "browserslist": [
         "supports es6-module"

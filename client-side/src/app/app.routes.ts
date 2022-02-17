@@ -1,41 +1,34 @@
-import { NgModule } from '@angular/core';
-import { Component } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AddonComponent } from './addon/addon.component';
-import { TodoForm } from './addon/form/todo-form.component';
+import { NgModule } from "@angular/core";
+import { Component } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { AddonComponent } from "./addon/addon.component";
+import { TodoForm } from "./addon/form/todo-form.component";
 
 // Important for single spa
 @Component({
-    selector: 'app-empty-route',
-    template: '<div></div>',
+  selector: "app-empty-route",
+  template: "<div></div>",
 })
 export class EmptyRouteComponent {}
 
 const routes: Routes = [
-    {
-        path: `settings/:addon_uuid`,
-        children: [
-            {
-                path: 'todos',
-                component: AddonComponent,
-            },
-            {
-                path: 'todos/:todo_uuid',
-                component: TodoForm
-            }
-        ]
-    },
-    {
-        path: '**',
-        component: EmptyRouteComponent
-    }
+  {
+    path: `settings/:addon_uuid`,
+    children: [
+      {
+        path: "Buttons",
+        component: AddonComponent,
+      },
+    ],
+  },
+  {
+    path: "**",
+    component: EmptyRouteComponent,
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
-
-
+export class AppRoutingModule {}
