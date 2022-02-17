@@ -13,14 +13,14 @@
     <ng-container pep-main-area>
         <div class="flexed">
             <div class="centered spaced">
-                <pep-button #buttonComp value={{initialValues.value}} styleType={{initialValues.style}}
+                <pep-button data-qa="componentBtn" #buttonComp value={{initialValues.value}} styleType={{initialValues.style}}
                     styleStateType={{initialValues.stateStyle}} sizeType={{initialValues.size}} classNames=""
                     [disabled]="false" iconName={{initialValues.iconType}} iconPosition="end" [visible]="true"
                     (click)="printComponentValue(buttonComp)">
                 </pep-button>
             </div>
 
-            <div class="centered spaced">
+            <div class="centered spaced" data-qa="style change btn">
                 <button (click)="changeComponent()">
                     change button
                 </button>
