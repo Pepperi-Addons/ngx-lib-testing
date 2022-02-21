@@ -203,8 +203,8 @@ export class AddonComponent implements OnInit {
         this.initialValues.iconType = this.arrayOfOptions[this.index].iconType;
     }
 
-    printComponentValue(buttonComp) {
-        console.log(`clicked button: ${buttonComp.value}`);
+    printComponentValue() {
+        console.log(`clicked button: ${this.initialValues.value}`);
     }
 
     createAllButtonOptionsArray() {
@@ -219,7 +219,7 @@ export class AddonComponent implements OnInit {
                         continue loop3;
                     }
                     let size = PepSizeTypeEnum[Object.keys(PepSizeTypeEnum)[index2]];
-                    let value = style + " " + stateStyle + " " + size;
+                    let value = style + " " + stateStyle + " " + size + " " + this.setSize(stateStyle, size, style) + " " + this.setColor(stateStyle, style);
                     let option: buttonAllowedOptions = {
                         value: value,
                         style: style as PepStyleType,
@@ -242,10 +242,9 @@ export class AddonComponent implements OnInit {
             let style = styleType as PepStyleType;
             let stateStyle = PepStyleStateTypeEnum[Object.keys(PepStyleStateTypeEnum)[0]];
             let size = PepSizeTypeEnum[Object.keys(PepSizeTypeEnum)[0]];
-            let value = style + " " + stateStyle + " " + size + " icon";
-
             for (let icon in PepIconTypeEnum) {
                 let iconType = icon as PepIconType;
+                let value = style + " " + stateStyle + " " + size + " " + iconType + " " + this.setSize(stateStyle, size, style) + " " + this.setColor(stateStyle, style);
                 let option: buttonAllowedOptions = {
                     value: value,
                     style: style as PepStyleType,
@@ -260,4 +259,216 @@ export class AddonComponent implements OnInit {
             return;
         }
     }
+
+    setSize(state: PepStyleStateType, size: PepSizeType, style: PepStyleType): string {
+        switch (style) {
+            case 'weak':
+                switch (state) {
+                    case 'system':
+                        switch (size) {
+                            case 'xs':
+                                return "24x98";
+                            case 'sm':
+                                return "32x89";
+                            case 'md':
+                                return "40x108";
+                            case 'lg':
+                                return "48x119";
+                            case 'xl':
+                                return "64x157";
+                        }
+                    case 'caution':
+                        switch (size) {
+                            case 'xs':
+                                return "24x81";
+                            case 'sm':
+                                return "32x89";
+                            case 'md':
+                                return "40x108";
+                            case 'lg':
+                                return "48x119";
+                            case 'xl':
+                                return "64x157";
+                        }
+                    case 'success':
+                        switch (size) {
+                            case 'xs':
+                                return "24x81";
+                            case 'sm':
+                                return "32x89";
+                            case 'md':
+                                return "40x108";
+                            case 'lg':
+                                return "48x119";
+                            case 'xl':
+                                return "64x157";
+                        }
+                }
+            case 'weak-invert':
+                switch (state) {
+                    case 'system':
+                        switch (size) {
+                            case 'xs':
+                                return "24x81";
+                            case 'sm':
+                                return "32x89";
+                            case 'md':
+                                return "40x108";
+                            case 'lg':
+                                return "48x119";
+                            case 'xl':
+                                return "64x157";
+                        }
+                    case 'caution':
+                        switch (size) {
+                            case 'xs':
+                                return "24x81";
+                            case 'sm':
+                                return "32x89";
+                            case 'md':
+                                return "40x108";
+                            case 'lg':
+                                return "48x119";
+                            case 'xl':
+                                return "64x157";
+                        }
+                    case 'success':
+                        switch (size) {
+                            case 'xs':
+                                return "24x81";
+                            case 'sm':
+                                return "32x89";
+                            case 'md':
+                                return "40x108";
+                            case 'lg':
+                                return "48x119";
+                            case 'xl':
+                                return "64x157";
+                        }
+                }
+            case 'regular':
+                switch (state) {
+                    case 'system':
+                        switch (size) {
+                            case 'xs':
+                                return "24x83";
+                            case 'sm':
+                                return "32x91";
+                            case 'md':
+                                return "40x110";
+                            case 'lg':
+                                return "48x121";
+                            case 'xl':
+                                return "64x159";
+                        }
+                    case 'caution':
+                        switch (size) {
+                            case 'xs':
+                                return "24x83";
+                            case 'sm':
+                                return "32x91";
+                            case 'md':
+                                return "40x110";
+                            case 'lg':
+                                return "48x121";
+                            case 'xl':
+                                return "64x159";
+                        }
+                    case 'success':
+                        switch (size) {
+                            case 'xs':
+                                return "24x83";
+                            case 'sm':
+                                return "32x91";
+                            case 'md':
+                                return "40x110";
+                            case 'lg':
+                                return "48x121";
+                            case 'xl':
+                                return "64x159";
+                        }
+                }
+            case 'strong':
+                switch (state) {
+                    case 'system':
+                        switch (size) {
+                            case 'xs':
+                                return "24x82";
+                            case 'sm':
+                                return "32x90";
+                            case 'md':
+                                return "40x109";
+                            case 'lg':
+                                return "48x120";
+                            case 'xl':
+                                return "64x158";
+                        }
+                    case 'caution':
+                        switch (size) {
+                            case 'xs':
+                                return "24x82";
+                            case 'sm':
+                                return "32x90";
+                            case 'md':
+                                return "40x109";
+                            case 'lg':
+                                return "48x120";
+                            case 'xl':
+                                return "64x158";
+                        }
+                    case 'success':
+                        switch (size) {
+                            case 'xs':
+                                return "24x82";
+                            case 'sm':
+                                return "32x90";
+                            case 'md':
+                                return "40x109";
+                            case 'lg':
+                                return "48x120";
+                            case 'xl':
+                                return "64x158";
+                        }
+                }
+        }
+
+    }
+
+
+    setColor(state: PepStyleStateType, style: PepStyleType): string {
+        switch (style) {
+            case 'weak':
+                switch (state) {
+                    case 'system':
+                        return 'rgba(26,26,26,0.12);rgba(255,255,255,1)';
+                    case 'caution':
+                        return 'rgba(204,0,0,0.12);rgba(255,255,255,1)';
+                    case 'success':
+                        return 'rgba(42,128,0,0.12);rgba(255,255,255,1)';
+                }
+            case 'weak-invert':
+                return 'rgba(255,255,255,0.5);rgba(255,255,255,1)';
+            case 'regular':
+                switch (state) {
+                    case 'system':
+                        return 'rgba(224,224,224,1);rgba(250,250,250,1)';
+                    case 'caution':
+                        return 'rgba(255,194,194,1);rgba(255,245,245,1)';
+                    case 'success':
+                        return 'rgba(214,255,194,1);rgba(248,255,245,1)';
+                }
+            case 'strong':
+                switch (state) {
+                    case 'system':
+                        return 'rgba(93,129,9,1);rgba(41,57,4,1)';
+                    case 'caution':
+                        return 'rgba(204,0,0,1);rgba(204,0,0,1)';
+                    case 'success':
+                        return 'rgba(42,128,0,1);rgba(17,51,0,1)';
+                }
+        }
+    }
+
+
 }
+
