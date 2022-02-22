@@ -15,8 +15,8 @@
             <div class="centered spaced">
                 <pep-button data-qa="componentBtn" #buttonComp value="pep-button"
                     styleType={{initialValues.style}} styleStateType={{initialValues.stateStyle}}
-                    sizeType={{initialValues.size}} classNames="" [disabled]="false" iconName={{initialValues.iconType}}
-                    iconPosition="end" [visible]="true" (click)="printComponentValue()">
+                    sizeType={{initialValues.size}} classNames="" [disabled]="IsDisabled" iconName={{initialValues.iconType}}
+                    iconPosition="end" [visible]="IsVisible" (click)="printComponentValue()">
                 </pep-button>
             </div>
 
@@ -26,7 +26,19 @@
                 </button>
             </div>
 
-            <h3 data-qa="auto-data">{{initialValues.value}}</h3>
+            <p data-qa="auto-data">{{initialValues.value}}</p>
+        </div>
+
+        <div class="centered spaced" data-qa="dis-comp">
+            <button (click)="disableComponent()">
+                disable button
+            </button>
+        </div>
+
+        <div class="centered spaced" data-qa="vis-comp">
+            <button (click)="visibilityOfComponent()">
+                visibility of button
+            </button>
         </div>
         <!-- <div class="centered spaced">
             <pep-button value="xtra small weak system button" styleType="weak" styleStateType="system" sizeType="xs"

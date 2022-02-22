@@ -158,6 +158,8 @@ export class AddonComponent implements OnInit {
 
     arrayOfOptions: buttonAllowedOptions[] = [];
     initialValues: buttonAllowedOptions = {} as buttonAllowedOptions;
+    IsDisabled: boolean = false;
+    IsVisible: boolean = true;
     index = 0;
 
     @Input() hostObject: any;
@@ -205,6 +207,14 @@ export class AddonComponent implements OnInit {
 
     printComponentValue() {
         console.log(`clicked button: ${this.initialValues.value}`);
+    }
+
+    disableComponent() {
+        this.IsDisabled = this.IsDisabled ? false : true;
+    }
+
+    visibilityOfComponent() {
+        this.IsVisible = this.IsVisible ? false : true;
     }
 
     createAllButtonOptionsArray() {
@@ -256,8 +266,19 @@ export class AddonComponent implements OnInit {
                 };
                 this.arrayOfOptions.push(option);
             }
+            let value = style + " " + stateStyle + " " + size + " " + this.setSize(stateStyle, size, style) + " " + this.setColor(stateStyle, style);
+            let option: buttonAllowedOptions = {
+                value: value,
+                style: style as PepStyleType,
+                stateStyle: stateStyle as PepStyleStateType,
+                size: size as PepSizeType,
+                disabled: false,
+                visibale: false,
+            };
+            this.arrayOfOptions.push(option);
             return;
         }
+
     }
 
     setSize(state: PepStyleStateType, size: PepSizeType, style: PepStyleType): string {
@@ -267,7 +288,7 @@ export class AddonComponent implements OnInit {
                     case 'system':
                         switch (size) {
                             case 'xs':
-                                return "24x98";
+                                return "24x81";//81 or 82
                             case 'sm':
                                 return "32x89";
                             case 'md':
@@ -280,7 +301,7 @@ export class AddonComponent implements OnInit {
                     case 'caution':
                         switch (size) {
                             case 'xs':
-                                return "24x81";
+                                return "24x81";//changed to 81 (was 82)
                             case 'sm':
                                 return "32x89";
                             case 'md':
@@ -309,7 +330,7 @@ export class AddonComponent implements OnInit {
                     case 'system':
                         switch (size) {
                             case 'xs':
-                                return "24x81";
+                                return "24x81";//changed to 81 (was 82)
                             case 'sm':
                                 return "32x89";
                             case 'md':
@@ -324,9 +345,9 @@ export class AddonComponent implements OnInit {
                             case 'xs':
                                 return "24x81";
                             case 'sm':
-                                return "32x89";
+                                return "32x90";
                             case 'md':
-                                return "40x108";
+                                return "40x109";
                             case 'lg':
                                 return "48x119";
                             case 'xl':
@@ -337,7 +358,7 @@ export class AddonComponent implements OnInit {
                             case 'xs':
                                 return "24x81";
                             case 'sm':
-                                return "32x89";
+                                return "32x90";
                             case 'md':
                                 return "40x108";
                             case 'lg':
@@ -366,11 +387,11 @@ export class AddonComponent implements OnInit {
                             case 'xs':
                                 return "24x83";
                             case 'sm':
-                                return "32x91";
+                                return "32x91";//changed to 92 (was 91)
                             case 'md':
                                 return "40x110";
                             case 'lg':
-                                return "48x121";
+                                return "48x121";//changed to 122 (was 121)
                             case 'xl':
                                 return "64x159";
                         }
@@ -379,7 +400,7 @@ export class AddonComponent implements OnInit {
                             case 'xs':
                                 return "24x83";
                             case 'sm':
-                                return "32x91";
+                                return "32x91";//changed to 92 (was 91)
                             case 'md':
                                 return "40x110";
                             case 'lg':
@@ -397,7 +418,7 @@ export class AddonComponent implements OnInit {
                             case 'sm':
                                 return "32x90";
                             case 'md':
-                                return "40x109";
+                                return "40x109";//changed to 109 (was 110)
                             case 'lg':
                                 return "48x120";
                             case 'xl':
@@ -408,7 +429,7 @@ export class AddonComponent implements OnInit {
                             case 'xs':
                                 return "24x82";
                             case 'sm':
-                                return "32x90";
+                                return "32x90";//changed to 90 (was 91)
                             case 'md':
                                 return "40x109";
                             case 'lg':
@@ -451,18 +472,18 @@ export class AddonComponent implements OnInit {
             case 'regular':
                 switch (state) {
                     case 'system':
-                        return 'rgba(224,224,224,1);rgba(250,250,250,1)';
+                        return 'rgba(250,250,250,1);rgba(224,224,224,1)';
                     case 'caution':
-                        return 'rgba(255,194,194,1);rgba(255,245,245,1)';
+                        return 'rgba(255,245,245,1);rgba(255,194,194,1)';
                     case 'success':
-                        return 'rgba(214,255,194,1);rgba(248,255,245,1)';
+                        return 'rgba(248,255,245,1);rgba(214,255,194,1)';
                 }
             case 'strong':
                 switch (state) {
                     case 'system':
                         return 'rgba(93,129,9,1);rgba(41,57,4,1)';
                     case 'caution':
-                        return 'rgba(204,0,0,1);rgba(204,0,0,1)';
+                        return 'rgba(204,0,0,1);rgba(128,0,0,1)';
                     case 'success':
                         return 'rgba(42,128,0,1);rgba(17,51,0,1)';
                 }
