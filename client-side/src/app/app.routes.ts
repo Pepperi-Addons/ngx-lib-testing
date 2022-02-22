@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AddonComponent } from "./addon/addon.component";
-import { TodoForm } from "./addon/form/todo-form.component";
+import { AddonComponentButtons } from "./addon/buttons.component";
+import { AttachmentComponent } from "./addon/attachment.component";
 
 // Important for single spa
 @Component({
@@ -17,7 +17,11 @@ const routes: Routes = [
     children: [
       {
         path: "Buttons",
-        component: AddonComponent,
+        component: AddonComponentButtons,
+      },
+      {
+        path: "Attachment",
+        component: AttachmentComponent,
       },
     ],
   },

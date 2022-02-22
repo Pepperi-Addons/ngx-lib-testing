@@ -1,0 +1,36 @@
+<pep-page-layout [addPadding]="true">
+    <ng-container pep-top-area>
+        <pep-top-bar title="NGX-lib Automation Testing Page">
+            <div header-start-content>
+                <!-- Add components you want after the title -->
+            </div>
+            <div header-end-content>
+                <!-- Add components you want at the right side -->
+            </div>
+        </pep-top-bar>
+    </ng-container>
+
+    <ng-container pep-main-area>
+        <pep-attachment data-qa="componentAtc" src={{initialValues.src}} label={{initialValues.label}} [mandatory]="IsMandatory"
+            [disabled]="false" xAlignment={{initialValues.xAlignment}} [rowSpan]="RowSpan" [showTitle]="ShowLabel">
+        </pep-attachment>
+
+        <div class="centered spaced" data-qa="style change btn">
+            <button (click)="changeComponent()">
+                change button
+            </button>
+        </div>
+
+        <div class="centered spaced" data-qa="style change btn">
+            <button (click)="gotoButtons()">
+                back to Buttons
+            </button>
+        </div>
+
+        <p data-qa="auto-data">{{initialValues.value}}</p>
+
+        <!-- (elementClick)="elementClick($event)" -->
+        <!-- (fileChange)="fileChange($event)" -->
+
+    </ng-container>
+</pep-page-layout>

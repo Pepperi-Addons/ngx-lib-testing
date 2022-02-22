@@ -151,10 +151,10 @@ interface buttonAllowedOptions {
 
 @Component({
     selector: "addon-module",
-    templateUrl: "./addon.component.html",
+    templateUrl: "./buttons.component.html",
     styleUrls: ["./addon.component.scss"],
 })
-export class AddonComponent implements OnInit {
+export class AddonComponentButtons implements OnInit {
 
     arrayOfOptions: buttonAllowedOptions[] = [];
     initialValues: buttonAllowedOptions = {} as buttonAllowedOptions;
@@ -488,6 +488,10 @@ export class AddonComponent implements OnInit {
                         return 'rgba(42,128,0,1);rgba(17,51,0,1)';
                 }
         }
+    }
+
+    gotoAttachment(){
+        this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Attachment`);
     }
 
 

@@ -16,6 +16,7 @@ import {
   pepIconSystemClose,
 } from "@pepperi-addons/ngx-lib/icon";
 import { PepButtonModule } from "@pepperi-addons/ngx-lib/button";
+import { PepAttachmentModule } from "@pepperi-addons/ngx-lib/attachment";
 import { PepDialogModule } from "@pepperi-addons/ngx-lib/dialog";
 import { PepMenuModule } from "@pepperi-addons/ngx-lib/menu";
 // import { PepListModule } from '@pepperi-addons/ngx-lib/list';
@@ -33,20 +34,25 @@ import {
 } from "@ngx-translate/core";
 
 import { AddonService } from "../services/addon.service";
-import { AddonComponent } from "./index";
-import { TodoForm } from "./form/todo-form.component";
+import { AddonComponentButtons } from "./index";
+import { AttachmentComponent } from "./index";
+import { PepAttachmentComponent } from "@pepperi-addons/ngx-lib/attachment";
 
 const pepIcons = [pepIconSystemClose];
 
 export const routes: Routes = [
   {
     path: "",
-    component: AddonComponent,
+    component: AddonComponentButtons,
+  },
+  {
+    path: "",
+    component: AttachmentComponent,
   },
 ];
 
 @NgModule({
-  declarations: [AddonComponent, TodoForm],
+  declarations: [AddonComponentButtons, AttachmentComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -61,6 +67,7 @@ export const routes: Routes = [
     PepMenuModule,
     PepPageLayoutModule,
     PepButtonModule,
+    PepAttachmentModule,
     PepDialogModule,
     // PepListModule,
     // PepSearchModule,
@@ -80,7 +87,7 @@ export const routes: Routes = [
     }),
     RouterModule.forChild(routes),
   ],
-  exports: [AddonComponent],
+  exports: [AddonComponentButtons],
   providers: [
     TranslateStore,
     // When loading this module from route we need to add this here (because only this module is loading).
