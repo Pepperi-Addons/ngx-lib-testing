@@ -104,7 +104,7 @@ export class AttachmentComponent implements OnInit {
                         showTitle: showTitle,
                         src: "https://idpfiles.sandbox.pepperi.com/f389fd2e-4a31-4965-a21e-3a98b4553300/images/logo.svg",
                         rowSpan: rowSpan,
-                        value:`mandatory:${isMandatory},xAlignment:left,showTitle:${showTitle},rowSpan:${rowSpan}`
+                        value: `mandatory:${isMandatory},xAlignment:left,showTitle:${showTitle},rowSpan:${rowSpan}->` + this.setSize(rowSpan)
                     };
                     this.arrayOfOptions.push(option);
                 }
@@ -113,7 +113,7 @@ export class AttachmentComponent implements OnInit {
 
     }
 
-    gotoButtons(){
+    gotoButtons() {
         this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Buttons`);
     }
 
@@ -130,10 +130,32 @@ export class AttachmentComponent implements OnInit {
                 showTitle: true,
                 src: "https://idpfiles.sandbox.pepperi.com/f389fd2e-4a31-4965-a21e-3a98b4553300/images/logo.svg",
                 rowSpan: 1,
-                value:`mandatory:true,xAlignment:${horizontalAlignment},showTitle:true,rowSpan:1`
+                value: `mandatory:true,xAlignment:${horizontalAlignment},showTitle:true,rowSpan:1->` + this.setSize(1),
             };
             this.arrayOfOptions.push(option);
         }
+    }
+
+    setSize(rowSpan: number): string {
+        switch (rowSpan) {
+            case 1:
+                return "42x1568";
+            case 2:
+                return "106x1568";
+            case 3:
+                return "170x1568";
+            case 4:
+                return "234x1568";
+            case 5:
+                return "298x1568";
+            case 6:
+                return "362x1568";
+            case 7:
+                return "426x1568";
+            case 8:
+                return "490x1568";
+        }
+
     }
 
 }
