@@ -12,7 +12,7 @@
 
     <ng-container pep-main-area>
         <pep-attachment data-qa="componentAtc" src={{initialValues.src}} label={{initialValues.label}} [mandatory]="IsMandatory"
-            [disabled]="false" xAlignment={{initialValues.xAlignment}} [rowSpan]="RowSpan" [showTitle]="ShowLabel">
+            [disabled]="false" xAlignment={{initialValues.xAlignment}} [rowSpan]="RowSpan" [showTitle]="ShowLabel" (elementClick)="elemClicked()" (fileChange)="fileChanged()">
         </pep-attachment>
 
         <div class="centered spaced" data-qa="style change btn">
@@ -26,6 +26,7 @@
                 back to Buttons
             </button>
         </div>
+
 
         <p data-qa="auto-data">{{initialValues.value}}</p>
 

@@ -46,6 +46,7 @@ export class AttachmentComponent implements OnInit {
     RowSpan = 0;
     ShowLabel = true;
     IsMandatory = true;
+    Src = "";
 
 
     constructor(
@@ -134,6 +135,14 @@ export class AttachmentComponent implements OnInit {
             };
             this.arrayOfOptions.push(option);
         }
+    }
+
+    fileChanged() {
+        console.log("file changed");
+    }
+
+    elemClicked(){
+        console.log("element clicked");
     }
 
     setSize(rowSpan: number): string {
