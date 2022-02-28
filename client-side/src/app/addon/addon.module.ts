@@ -36,7 +36,8 @@ import {
 import { AddonService } from "../services/addon.service";
 import { AddonComponentButtons } from "./index";
 import { AttachmentComponent } from "./index";
-import { PepAttachmentComponent } from "@pepperi-addons/ngx-lib/attachment";
+import { CheckboxComponent } from "./index";
+import { PepCheckboxModule } from "@pepperi-addons/ngx-lib/checkbox";
 
 const pepIcons = [pepIconSystemClose];
 
@@ -52,7 +53,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AddonComponentButtons, AttachmentComponent],
+  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -63,6 +64,7 @@ export const routes: Routes = [
     PepSizeDetectorModule,
     MatIconModule,
     PepIconModule,
+    PepCheckboxModule,
     PepTopBarModule,
     PepMenuModule,
     PepPageLayoutModule,

@@ -119,6 +119,9 @@ export class AttachmentComponent implements OnInit {
     }
 
 
+    gotoCheckbox() {
+        this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Checkbox`);
+    }
 
     createAttachmentWithAllhorizontalAlignmentOptions() {
         for (let index = 0; index < Object.keys(PepHorizontalAlignmentEnum).length; index++) {
