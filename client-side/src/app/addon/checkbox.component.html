@@ -11,10 +11,10 @@
     </ng-container>
     <ng-container pep-main-area>
         <div class="centered spaced">
-            <pep-checkbox value="{{initialValues.value}}" label="{{initialValues.label}}" type="{{initialValues.type}}"
+            <pep-checkbox [value]="Value" label="{{initialValues.label}}" type="{{initialValues.type}}"
                 [mandatory]="IsMandatory" [disabled]="IsDisabled" xAlignment="{{initialValues.xAlignment}}"
                 [additionalValue]="AdditionalValue" [showTitle]="ShowTitle" [renderTitle]="RenderTitle"
-                [visible]="IsVisible" class="centered">
+                [visible]="IsVisible" class="centered" (valueChange)="elemClicked()">
             </pep-checkbox>
             <!-- (valueChange)="valueChange($event)" -->
         </div>

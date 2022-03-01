@@ -57,6 +57,7 @@ export class CheckboxComponent implements OnInit {
     RenderTitle = true;
     IsVisible = true;
     TitleToShow = "";
+    Value: boolean | undefined = undefined;
 
 
     constructor(
@@ -70,18 +71,17 @@ export class CheckboxComponent implements OnInit {
             this.screenSize = size;
         });
         this.createAllAttachmentOptionsArray();
-        debugger;
-        this.initialValues.value = this.arrayOfOptions[this.index].value;
+        this.Value = this.arrayOfOptions[this.index].value;
         this.initialValues.label = this.arrayOfOptions[this.index].label;
         this.initialValues.type = this.arrayOfOptions[this.index].type;
         this.initialValues.xAlignment = this.arrayOfOptions[this.index].xAlignment;
         this.IsMandatory = this.arrayOfOptions[this.index].mandatory;
-        this.AdditionalValue = this.arrayOfOptions[this.index].additionalValue;
+        this.AdditionalValue = JSON.parse(this.arrayOfOptions[this.index].additionalValue);
         this.ShowTitle = this.arrayOfOptions[this.index].showTitle;
         this.RenderTitle = this.arrayOfOptions[this.index].renderTitle;
         this.IsVisible = this.arrayOfOptions[this.index].visible;
-        this.TitleToShow = `value:${this.initialValues.value},label:${this.initialValues.label},type:${this.initialValues.type},alignment:${this.initialValues.xAlignment},additionalValue:${this.AdditionalValue},
-        showTitle:${this.ShowTitle},renderTitle:${this.RenderTitle},visible:${this.IsVisible},mandatory:${this.IsMandatory}`;
+        this.TitleToShow = `value:${this.Value};label:${this.initialValues.label};type:${this.initialValues.type};alignment:${this.initialValues.xAlignment};additionalValue:${this.AdditionalValue};
+        showTitle:${this.ShowTitle};renderTitle:${this.RenderTitle};visible:${this.IsVisible};mandatory:${this.IsMandatory};disabled:${this.IsDisabled}`;
     }
 
     ngOnInit() { }
@@ -95,7 +95,7 @@ export class CheckboxComponent implements OnInit {
             this.index = 0;
         }
         console.log(`style changed`);
-        this.initialValues.value = this.arrayOfOptions[this.index].value;
+        this.Value = this.arrayOfOptions[this.index].value;
         this.initialValues.label = this.arrayOfOptions[this.index].label;
         this.initialValues.type = this.arrayOfOptions[this.index].type;
         this.IsMandatory = this.arrayOfOptions[this.index].mandatory;
@@ -105,8 +105,8 @@ export class CheckboxComponent implements OnInit {
         this.ShowTitle = this.arrayOfOptions[this.index].showTitle;
         this.RenderTitle = this.arrayOfOptions[this.index].renderTitle;
         this.IsVisible = this.arrayOfOptions[this.index].visible;
-        this.TitleToShow = `value:${this.initialValues.value},label:${this.initialValues.label},type:${this.initialValues.type},alignment:${this.initialValues.xAlignment},additionalValue:${this.AdditionalValue},
-        showTitle:${this.ShowTitle},renderTitle:${this.RenderTitle},visible:${this.IsVisible},mandatory:${this.IsMandatory}`;
+        this.TitleToShow = `value:${this.Value};label:${this.initialValues.label};type:${this.initialValues.type};alignment:${this.initialValues.xAlignment};additionalValue:${this.AdditionalValue};
+        showTitle:${this.ShowTitle};renderTitle:${this.RenderTitle};visible:${this.IsVisible};mandatory:${this.IsMandatory};disabled:${this.IsDisabled}`;
     }
 
     createAllAttachmentOptionsArray() {
@@ -117,29 +117,23 @@ export class CheckboxComponent implements OnInit {
                 const value = index1 % 2 === 0 ? true : false;
                 for (let index2 = 0; index2 < 2; index2++) {
                     const mandatory = index2 % 2 === 0 ? true : false;
-                    for (let index3 = 0; index3 < 2; index3++) {
-                        const disabled = index3 % 2 === 0 ? true : false;
-                        for (let index4 = 0; index4 < 2; index4++) {
-                            const showTitle = index4 % 2 === 0 ? true : false;
-                            for (let index5 = 0; index5 < 2; index5++) {
-                                const renderTitle = index5 % 2 === 0 ? true : false;
-                                for (let index6 = 0; index6 < 2; index6++) {
-                                    const visible = index6 % 2 === 0 ? true : false;
-                                    let option: checkboxAllowedOptions = {
-                                        value: value,
-                                        label: "checkbox",
-                                        type: checkBoxFieldType,
-                                        mandatory: mandatory,
-                                        disabled: disabled,
-                                        xAlignment: "center",
-                                        additionalValue: "",
-                                        showTitle: showTitle,
-                                        renderTitle: renderTitle,
-                                        visible: visible,
-                                    };
-                                    this.arrayOfOptions.push(option);
-                                }
-                            }
+                    for (let index4 = 0; index4 < 2; index4++) {
+                        const showTitle = index4 % 2 === 0 ? true : false;
+                        for (let index5 = 0; index5 < 2; index5++) {
+                            const renderTitle = index5 % 2 === 0 ? true : false;
+                            let option: checkboxAllowedOptions = {
+                                value: value,
+                                label: "checkbox",
+                                type: checkBoxFieldType,
+                                mandatory: mandatory,
+                                disabled: false,
+                                xAlignment: "center",
+                                additionalValue: '{"CheckedText": "❤","UncheckedText": "✌️"}',
+                                showTitle: showTitle,
+                                renderTitle: renderTitle,
+                                visible: true,
+                            };
+                            this.arrayOfOptions.push(option);
                         }
                     }
                 }
@@ -164,13 +158,38 @@ export class CheckboxComponent implements OnInit {
                 mandatory: true,
                 disabled: false,
                 xAlignment: horizontalAlignment,
-                additionalValue: "",
+                additionalValue: '{"CheckedText": "❤","UncheckedText": "✌️"}',
                 showTitle: true,
                 renderTitle: true,
                 visible: true,
             };
             this.arrayOfOptions.push(option);
         }
+        let option: checkboxAllowedOptions = {
+            value: true,
+            label: "checkbox",
+            type: "checkbox",
+            mandatory: true,
+            disabled: true,
+            xAlignment: "center",
+            additionalValue: '{"CheckedText": "❤","UncheckedText": "✌️"}',
+            showTitle: true,
+            renderTitle: true,
+            visible: true,
+        };
+        this.arrayOfOptions.push(option);
+        option = {
+            value: true,
+            label: "checkbox",
+            type: "checkbox",
+            mandatory: true,
+            disabled: false,
+            xAlignment: "center",
+            additionalValue: '{"CheckedText": "❤","UncheckedText": "✌️"}',
+            showTitle: true,
+            renderTitle: true,
+            visible: false,
+        };
     }
 
     fileChanged() {
@@ -178,7 +197,7 @@ export class CheckboxComponent implements OnInit {
     }
 
     elemClicked() {
-        console.log("element clicked");
+        console.log("checkbox value changed");
     }
 
 }
