@@ -321,5 +321,9 @@ export class ColorComponent implements OnInit {
             return "NONE";
     }
 
+    gotoDate(){
+        this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Date`);
+    }
+
 }
 

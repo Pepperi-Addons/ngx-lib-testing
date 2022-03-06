@@ -11,8 +11,14 @@
     </ng-container>
 
     <ng-container pep-main-area>
-        <pep-color value="{{Value}}" label="{{this.initialValues.label}}" [disabled]="IsDisabled" xAlignment="{{this.initialValues.xAlignment}}" type="{{this.initialValues.type}}" [showTitle]="ShowTitle"
-            [showAAComplient]="ShowAA" (valueChange)="valueChange()"></pep-color>
+        <div class="centered spaced">
+            <pep-date value="{{this.initialValues.value}}" label="{{this.initialValues.label}}"
+                type="{{this.initialValues.type}}" [mandatory]="IsMandatory" [disabled]="IsDisabled"
+                textColor="{{this.initialValues.textColor}}" xAlignment="{{this.initialValues.xAlignment}}"
+                [showTitle]="ShowTitle" [renderTitle]="RenderTitle" [renderError]="RenderError"
+                [renderSymbol]="RenderSymbol" (valueChange)="valueChange()">
+            </pep-date>
+        </div>
 
         <div class="centered spaced" data-qa="style change btn">
             <button (click)="changeComponent()">
@@ -20,16 +26,9 @@
             </button>
         </div>
 
-
-        <div class="centered spaced" data-qa="backToLastTest">
-            <button (click)="gotoCheckbox()">
-                back to checkbox
-            </button>
-        </div>
-
         <div class="centered spaced" data-qa="next-test">
-            <button (click)="gotoDate()">
-                goto Date
+            <button (click)="gotoColor()">
+                back to color
             </button>
         </div>
 

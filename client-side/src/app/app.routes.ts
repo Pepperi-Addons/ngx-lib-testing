@@ -4,6 +4,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AddonComponentButtons } from "./addon/buttons.component";
 import { AttachmentComponent } from "./addon/attachment.component";
 import { CheckboxComponent } from "./addon/checkbox.component";
+import { DateComponent } from "./addon/date.component";
 import { ColorComponent } from "./addon";
 
 // Important for single spa
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: "Color",
         component: ColorComponent,
+      },
+      {
+        path: "Date",
+        component: DateComponent,
       },
     ],
   },

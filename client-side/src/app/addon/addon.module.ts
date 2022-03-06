@@ -40,6 +40,8 @@ import { AttachmentComponent } from "./index";
 import { CheckboxComponent } from "./index";
 import { PepCheckboxModule } from "@pepperi-addons/ngx-lib/checkbox";
 import { ColorComponent } from "./index";
+import { DateComponent } from "./index";
+import { PepDateModule } from "@pepperi-addons/ngx-lib/date";
 
 const pepIcons = [pepIconSystemClose];
 
@@ -55,7 +57,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent, ColorComponent],
+  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent, ColorComponent,DateComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -71,6 +73,7 @@ export const routes: Routes = [
     PepMenuModule,
     PepPageLayoutModule,
     PepButtonModule,
+    PepDateModule,
     PepAttachmentModule,
     // PepColorService,
     PepColorModule,
