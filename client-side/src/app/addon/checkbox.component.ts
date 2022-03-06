@@ -145,6 +145,10 @@ export class CheckboxComponent implements OnInit {
         this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Attachment`);
     }
 
+    gotoColor() {
+        this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Color`);
+    }
+
 
 
     createAttachmentWithAllhorizontalAlignmentOptions() {

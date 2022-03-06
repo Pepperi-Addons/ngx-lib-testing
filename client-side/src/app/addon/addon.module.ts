@@ -19,6 +19,7 @@ import { PepButtonModule } from "@pepperi-addons/ngx-lib/button";
 import { PepAttachmentModule } from "@pepperi-addons/ngx-lib/attachment";
 import { PepDialogModule } from "@pepperi-addons/ngx-lib/dialog";
 import { PepMenuModule } from "@pepperi-addons/ngx-lib/menu";
+import { PepColorModule } from "@pepperi-addons/ngx-lib/color";
 // import { PepListModule } from '@pepperi-addons/ngx-lib/list';
 // import { PepSearchModule } from '@pepperi-addons/ngx-lib/search';
 
@@ -38,6 +39,7 @@ import { AddonComponentButtons } from "./index";
 import { AttachmentComponent } from "./index";
 import { CheckboxComponent } from "./index";
 import { PepCheckboxModule } from "@pepperi-addons/ngx-lib/checkbox";
+import { ColorComponent } from "./index";
 
 const pepIcons = [pepIconSystemClose];
 
@@ -53,7 +55,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent],
+  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent, ColorComponent],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -70,6 +72,8 @@ export const routes: Routes = [
     PepPageLayoutModule,
     PepButtonModule,
     PepAttachmentModule,
+    // PepColorService,
+    PepColorModule,
     PepDialogModule,
     // PepListModule,
     // PepSearchModule,

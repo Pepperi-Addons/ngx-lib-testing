@@ -11,9 +11,8 @@
     </ng-container>
 
     <ng-container pep-main-area>
-        <pep-attachment data-qa="componentAtc" src={{initialValues.src}} label={{initialValues.label}} [mandatory]="IsMandatory"
-            [disabled]="false" xAlignment={{initialValues.xAlignment}} [rowSpan]="RowSpan" [showTitle]="ShowLabel" (elementClick)="elemClicked()" (fileChange)="fileChanged()">
-        </pep-attachment>
+        <pep-color value="{{Value}}" label="{{this.initialValues.label}}" [disabled]="IsDisabled" xAlignment="{{this.initialValues.xAlignment}}" type="{{this.initialValues.type}}" [showTitle]="ShowTitle"
+            [showAAComplient]="ShowAA" (valueChange)="valueChange()"></pep-color>
 
         <div class="centered spaced" data-qa="style change btn">
             <button (click)="changeComponent()">
@@ -21,23 +20,15 @@
             </button>
         </div>
 
-        <div class="centered spaced" data-qa="backToLastTest">
-            <button (click)="gotoButtons()">
-                back to Buttons
-            </button>
-        </div>
 
         <div class="centered spaced" data-qa="next-test">
             <button (click)="gotoCheckbox()">
-                goto checkbox
+                back to checkbox
             </button>
         </div>
 
 
-        <p data-qa="auto-data">{{initialValues.value}}</p>
-
-        <!-- (elementClick)="elementClick($event)" -->
-        <!-- (fileChange)="fileChange($event)" -->
+        <p data-qa="auto-data">{{valueToPrint}}</p>
 
     </ng-container>
 </pep-page-layout>
