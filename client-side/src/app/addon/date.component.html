@@ -12,7 +12,7 @@
 
     <ng-container pep-main-area>
         <div class="centered spaced">
-            <pep-date value="{{this.initialValues.value}}" label="{{this.initialValues.label}}"
+            <pep-date [value]="ValueDate" label="{{this.initialValues.label}}"
                 type="{{this.initialValues.type}}" [mandatory]="IsMandatory" [disabled]="IsDisabled"
                 textColor="{{this.initialValues.textColor}}" xAlignment="{{this.initialValues.xAlignment}}"
                 [showTitle]="ShowTitle" [renderTitle]="RenderTitle" [renderError]="RenderError"
@@ -23,6 +23,12 @@
         <div class="centered spaced" data-qa="style change btn">
             <button (click)="changeComponent()">
                 change component
+            </button>
+        </div>
+
+        <div class="centered spaced" data-qa="style change btn">
+            <button (click)="resetDate()">
+                reset date to 01/01/2020
             </button>
         </div>
 

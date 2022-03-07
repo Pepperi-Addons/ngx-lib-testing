@@ -24,10 +24,6 @@ enum PepDateFieldTypeEnum {
     'datetime' = 'datetime',
 }
 
-// enum StateOfClickEnum {
-//     'pre' = 'pre',
-//     'post' = 'post',
-// }
 
 interface dateAllowedOptions {
     value: string;
@@ -68,6 +64,7 @@ export class DateComponent implements OnInit {
     valueToPrint = "";
     Value = "#ccc";
     textColors = ["#aaa000", "#bbbfff", "#dd0000"];
+    ValueDate = "01/02/2020";
 
     constructor(
         public addonService: AddonService,
@@ -92,8 +89,8 @@ export class DateComponent implements OnInit {
         this.RenderError = this.arrayOfOptions[this.index].renderError;
         this.RenderSymbol = this.arrayOfOptions[this.index].renderSymbol;
         this.valueToPrint =
-            `value:${this.initialValues.value};label:${this.initialValues.label};type:${this.initialValues.type};
-            mandatory:${this.IsMandatory};disabled:${this.IsDisabled};textColor:${this.initialValues.textColor};
+            `value:${this.ValueDate};label:${this.initialValues.label};type:${this.initialValues.type};
+            mandatory:${this.IsMandatory};disabled:${this.IsDisabled};textColor:${this.translateHexToRGB(this.initialValues.textColor)};
             xAlignment:${this.initialValues.xAlignment};showTitle:${this.ShowTitle};renderTitle:${this.RenderTitle};
             RenderError:${this.RenderError};renderSymbol:${this.RenderSymbol}`;
     }
@@ -109,7 +106,6 @@ export class DateComponent implements OnInit {
             this.index = 0;
         }
         console.log(`style changed`);
-        this.initialValues.value = this.arrayOfOptions[this.index].value;
         this.initialValues.label = this.arrayOfOptions[this.index].label;
         this.initialValues.type = this.arrayOfOptions[this.index].type;
         this.IsMandatory = this.arrayOfOptions[this.index].mandatory;
@@ -121,8 +117,8 @@ export class DateComponent implements OnInit {
         this.RenderError = this.arrayOfOptions[this.index].renderError;
         this.RenderSymbol = this.arrayOfOptions[this.index].renderSymbol;
         this.valueToPrint =
-            `value:${this.initialValues.value};label:${this.initialValues.label};type:${this.initialValues.type};
-            mandatory:${this.IsMandatory};disabled:${this.IsDisabled};textColor:${this.initialValues.textColor};
+            `value:${this.ValueDate};label:${this.initialValues.label};type:${this.initialValues.type};
+            mandatory:${this.IsMandatory};disabled:${this.IsDisabled};textColor:${this.translateHexToRGB(this.initialValues.textColor)};
             xAlignment:${this.initialValues.xAlignment};showTitle:${this.ShowTitle};renderTitle:${this.RenderTitle};
             RenderError:${this.RenderError};renderSymbol:${this.RenderSymbol}`;
     }
@@ -142,7 +138,7 @@ export class DateComponent implements OnInit {
                             for (let index6 = 0; index6 < 2; index6++) {
                                 let renderError = index6 ? true : false;
                                 let option: dateAllowedOptions = {
-                                    value: "2020-1-1",
+                                    value: this.ValueDate,
                                     label: "date",
                                     type: dateFieldType,
                                     mandatory: isMandatory,
@@ -173,7 +169,7 @@ export class DateComponent implements OnInit {
         for (let index = 0; index < Object.keys(PepHorizontalAlignmentEnum).length; index++) {
             let horizontalAlignment = PepHorizontalAlignmentEnum[Object.keys(PepHorizontalAlignmentEnum)[index]];
             let option: dateAllowedOptions = {
-                value: "2020-1-1",
+                value: this.ValueDate,
                 label: "date",
                 type: "date",
                 mandatory: true,
@@ -189,7 +185,7 @@ export class DateComponent implements OnInit {
         }
         for (let index = 1; index < this.textColors.length; index++) {
             let option: dateAllowedOptions = {
-                value: "2020-1-1",
+                value: this.ValueDate,
                 label: "date",
                 type: "date",
                 mandatory: true,
@@ -204,12 +200,12 @@ export class DateComponent implements OnInit {
             this.arrayOfOptions.push(option);
         }
         let option: dateAllowedOptions = {
-            value: "2020-1-1",
+            value: this.ValueDate,
             label: "date",
             type: "date",
             mandatory: true,
             disabled: true,
-            textColor: "deafult",
+            textColor: this.textColors[0],
             xAlignment: "left",
             showTitle: true,
             renderTitle: true,
@@ -221,6 +217,19 @@ export class DateComponent implements OnInit {
 
     valueChange() {
         console.log("date changed");
+    }
+
+    translateHexToRGB(hexValue) {
+        let red = parseInt(hexValue[1] + hexValue[2], 16);
+        let green = parseInt(hexValue[3] + hexValue[4], 16);
+        let blue = parseInt(hexValue[5] + hexValue[6], 16);
+        return `rgba(${red},${green},${blue},1)`;
+    }
+
+    resetDate() {
+        const elem = document.getElementById("forQA");
+        debugger;
+        elem["Value"] = this.ValueDate;
     }
 
 
