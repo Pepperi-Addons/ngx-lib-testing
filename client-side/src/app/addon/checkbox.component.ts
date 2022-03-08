@@ -76,7 +76,7 @@ export class CheckboxComponent implements OnInit {
         this.initialValues.type = this.arrayOfOptions[this.index].type;
         this.initialValues.xAlignment = this.arrayOfOptions[this.index].xAlignment;
         this.IsMandatory = this.arrayOfOptions[this.index].mandatory;
-        this.AdditionalValue = JSON.parse(this.arrayOfOptions[this.index].additionalValue);
+        this.AdditionalValue = (this.arrayOfOptions[this.index].additionalValue);
         this.ShowTitle = this.arrayOfOptions[this.index].showTitle;
         this.RenderTitle = this.arrayOfOptions[this.index].renderTitle;
         this.IsVisible = this.arrayOfOptions[this.index].visible;

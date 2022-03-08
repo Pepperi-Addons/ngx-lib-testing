@@ -105,7 +105,7 @@ export class AttachmentComponent implements OnInit {
                         showTitle: showTitle,
                         src: "https://idpfiles.sandbox.pepperi.com/f389fd2e-4a31-4965-a21e-3a98b4553300/images/logo.svg",
                         rowSpan: rowSpan,
-                        value: `mandatory:${isMandatory},xAlignment:left,showTitle:${showTitle},rowSpan:${rowSpan}->` + this.setSize(rowSpan)
+                        value: `mandatory:${isMandatory};xAlignment:left;showTitle:${showTitle};rowSpan:${rowSpan}->` + this.setSize(rowSpan)
                     };
                     this.arrayOfOptions.push(option);
                 }
@@ -134,7 +134,7 @@ export class AttachmentComponent implements OnInit {
                 showTitle: true,
                 src: "https://idpfiles.sandbox.pepperi.com/f389fd2e-4a31-4965-a21e-3a98b4553300/images/logo.svg",
                 rowSpan: 1,
-                value: `mandatory:true,xAlignment:${horizontalAlignment},showTitle:true,rowSpan:1->` + this.setSize(1),
+                value: `mandatory:true;xAlignment:${horizontalAlignment};showTitle:true;rowSpan:1->` + this.setSize(1),
             };
             this.arrayOfOptions.push(option);
         }
@@ -144,7 +144,7 @@ export class AttachmentComponent implements OnInit {
         console.log("file changed");
     }
 
-    elemClicked(){
+    elemClicked() {
         console.log("element clicked");
     }
 

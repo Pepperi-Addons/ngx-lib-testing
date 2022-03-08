@@ -83,7 +83,7 @@ export class ColorComponent implements OnInit {
         this.ShowAA = this.arrayOfOptions[this.index].showAAComplient;
         this.valueToPrint = `value:${this.Value};disabdled:${this.arrayOfOptions[this.index].disabled};xAlignment:${this.initialValues.xAlignment};type:${this.arrayOfOptions[this.index].type};
         showTitle:${this.arrayOfOptions[this.index].showTitle};showAAComplient:${this.arrayOfOptions[this.index].showAAComplient};` + this.setColor(this.initialValues.type, this.index, "pre" as StateOfClickEnum, this.IsDisabled)
-            + " => " + this.setColor(this.initialValues.type, this.index, "post" as StateOfClickEnum, this.IsDisabled);
+            + "=>" + this.setColor(this.initialValues.type, this.index, "post" as StateOfClickEnum, this.IsDisabled);
     }
 
     ngOnInit() { }
@@ -105,7 +105,7 @@ export class ColorComponent implements OnInit {
         this.initialValues.type = this.arrayOfOptions[this.index].type;
         this.ShowAA = this.arrayOfOptions[this.index].showAAComplient;
         this.valueToPrint = `value:${this.arrayOfOptions[this.index].value};disabdled:${this.arrayOfOptions[this.index].disabled};xAlignment:${this.initialValues.xAlignment};type:${this.arrayOfOptions[this.index].type};
-        showTitle:${this.arrayOfOptions[this.index].showTitle};showAAComplient:${this.arrayOfOptions[this.index].showAAComplient};` + this.setColor(this.initialValues.type, this.index, "pre" as StateOfClickEnum, this.IsDisabled) + " => "
+        showTitle:${this.arrayOfOptions[this.index].showTitle};showAAComplient:${this.arrayOfOptions[this.index].showAAComplient};` + this.setColor(this.initialValues.type, this.index, "pre" as StateOfClickEnum, this.IsDisabled) + "=>"
             + this.setColor(this.initialValues.type, this.index, "post" as StateOfClickEnum, this.IsDisabled);
     }
 
@@ -321,7 +321,7 @@ export class ColorComponent implements OnInit {
             return "NONE";
     }
 
-    gotoDate(){
+    gotoDate() {
         this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Date`);
     }
 

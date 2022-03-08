@@ -161,7 +161,7 @@ export class AddonComponentButtons implements OnInit {
     IsDisabled: boolean = false;
     IsVisible: boolean = true;
     index = 0;
-
+    ValueToPrint = "";
     @Input() hostObject: any;
 
     @Output() hostEvents: EventEmitter<any> = new EventEmitter<any>();
@@ -184,6 +184,8 @@ export class AddonComponentButtons implements OnInit {
         this.initialValues.stateStyle = this.arrayOfOptions[this.index].stateStyle;
         this.initialValues.size = this.arrayOfOptions[this.index].size;
         this.initialValues.iconType = this.arrayOfOptions[this.index].iconType;
+        this.ValueToPrint = `style:${this.initialValues.style};state:${this.initialValues.stateStyle};size:${this.initialValues.size};icon:${this.initialValues.iconType};
+        autoSize:${this.setSize(this.initialValues.stateStyle, this.initialValues.size, this.initialValues.style)};autoColor:${this.setColor(this.initialValues.stateStyle, this.initialValues.style)}`;
     }
 
     ngOnInit() { }
@@ -203,6 +205,8 @@ export class AddonComponentButtons implements OnInit {
         this.initialValues.stateStyle = this.arrayOfOptions[this.index].stateStyle;
         this.initialValues.size = this.arrayOfOptions[this.index].size;
         this.initialValues.iconType = this.arrayOfOptions[this.index].iconType;
+        this.ValueToPrint = `style:${this.initialValues.style};state:${this.initialValues.stateStyle};size:${this.initialValues.size};icon:${this.initialValues.iconType};
+        autoSize:${this.setSize(this.initialValues.stateStyle, this.initialValues.size, this.initialValues.style)};autoColor:${this.setColor(this.initialValues.stateStyle, this.initialValues.style)}`;
     }
 
     printComponentValue() {
@@ -461,36 +465,36 @@ export class AddonComponentButtons implements OnInit {
             case 'weak':
                 switch (state) {
                     case 'system':
-                        return 'rgba(26,26,26,0.12);rgba(255,255,255,1)';
+                        return 'rgba(26,26,26,0.12)=>rgba(255,255,255,1)';
                     case 'caution':
-                        return 'rgba(204,0,0,0.12);rgba(255,255,255,1)';
+                        return 'rgba(204,0,0,0.12)=>rgba(255,255,255,1)';
                     case 'success':
-                        return 'rgba(42,128,0,0.12);rgba(255,255,255,1)';
+                        return 'rgba(42,128,0,0.12)=>rgba(255,255,255,1)';
                 }
             case 'weak-invert':
-                return 'rgba(255,255,255,0.5);rgba(255,255,255,1)';
+                return 'rgba(255,255,255,0.5)=>rgba(255,255,255,1)';
             case 'regular':
                 switch (state) {
                     case 'system':
-                        return 'rgba(250,250,250,1);rgba(224,224,224,1)';
+                        return 'rgba(250,250,250,1)=>rgba(224,224,224,1)';
                     case 'caution':
-                        return 'rgba(255,245,245,1);rgba(255,194,194,1)';
+                        return 'rgba(255,245,245,1)=>rgba(255,194,194,1)';
                     case 'success':
-                        return 'rgba(248,255,245,1);rgba(214,255,194,1)';
+                        return 'rgba(248,255,245,1)=>rgba(214,255,194,1)';
                 }
             case 'strong':
                 switch (state) {
                     case 'system':
-                        return 'rgba(93,129,9,1);rgba(41,57,4,1)';
+                        return 'rgba(93,129,9,1)=>rgba(41,57,4,1)';
                     case 'caution':
-                        return 'rgba(204,0,0,1);rgba(128,0,0,1)';
+                        return 'rgba(204,0,0,1)=>rgba(128,0,0,1)';
                     case 'success':
-                        return 'rgba(42,128,0,1);rgba(17,51,0,1)';
+                        return 'rgba(42,128,0,1)=>rgba(17,51,0,1)';
                 }
         }
     }
 
-    gotoAttachment(){
+    gotoAttachment() {
         this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Attachment`);
     }
 
