@@ -133,29 +133,22 @@ export class DateComponent implements OnInit {
                     let showTitle = index3 ? true : false;
                     for (let index4 = 0; index4 < 2; index4++) {
                         let renderSymbol = index4 ? true : false;
-                        for (let index5 = 0; index5 < 2; index5++) {
-                            let renderTitle = index5 ? true : false;
-                            for (let index6 = 0; index6 < 2; index6++) {
-                                let renderError = index6 ? true : false;
-                                let option: dateAllowedOptions = {
-                                    value: this.ValueDate,
-                                    label: "date",
-                                    type: dateFieldType,
-                                    mandatory: isMandatory,
-                                    disabled: false,
-                                    textColor: this.textColors[0],
-                                    xAlignment: "left",
-                                    showTitle: showTitle,
-                                    renderTitle: renderTitle,
-                                    renderError: renderError,
-                                    renderSymbol: renderSymbol,
-                                };
-                                this.arrayOfOptions.push(option);
-                            }
-                        }
+                        let option: dateAllowedOptions = {
+                            value: this.ValueDate,
+                            label: "date",
+                            type: dateFieldType,
+                            mandatory: isMandatory,
+                            disabled: false,
+                            textColor: this.textColors[0],
+                            xAlignment: "left",
+                            showTitle: showTitle,
+                            renderTitle: true,
+                            renderError: true,
+                            renderSymbol: renderSymbol,
+                        };
+                        this.arrayOfOptions.push(option);
                     }
                 }
-
             }
         }
     }
@@ -209,6 +202,35 @@ export class DateComponent implements OnInit {
             xAlignment: "left",
             showTitle: true,
             renderTitle: true,
+            renderError: true,
+            renderSymbol: true,
+        };
+        this.arrayOfOptions.push(option);
+
+        option = {
+            value: this.ValueDate,
+            label: "date",
+            type: "date",
+            mandatory: true,
+            disabled: true,
+            textColor: this.textColors[0],
+            xAlignment: "left",
+            showTitle: true,
+            renderTitle: false,
+            renderError: true,
+            renderSymbol: true,
+        };
+        this.arrayOfOptions.push(option);
+        option = {
+            value: this.ValueDate,
+            label: "date",
+            type: "date",
+            mandatory: true,
+            disabled: true,
+            textColor: this.textColors[0],
+            xAlignment: "left",
+            showTitle: false,
+            renderTitle: false,
             renderError: true,
             renderSymbol: true,
         };
