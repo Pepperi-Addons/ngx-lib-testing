@@ -13,21 +13,22 @@
     <ng-container pep-main-area>
         <div class="flexed">
             <div class="centered spaced">
-                <pep-button data-qa="componentBtn" #buttonComp value="pep-button"
-                    styleType={{initialValues.style}} styleStateType={{initialValues.stateStyle}}
-                    sizeType={{initialValues.size}} classNames="" [disabled]="IsDisabled" iconName={{initialValues.iconType}}
-                    iconPosition="end" [visible]="IsVisible" (click)="printComponentValue()">
+                <pep-button data-qa="componentBtn" #buttonComp value="pep-button" styleType={{initialValues.style}}
+                    styleStateType={{initialValues.stateStyle}} sizeType={{initialValues.size}} classNames=""
+                    [disabled]="IsDisabled" iconName={{initialValues.iconType}} iconPosition="end" [visible]="IsVisible"
+                    (click)="printComponentValue()">
                 </pep-button>
             </div>
-
-            <div class="centered spaced" data-qa="style change btn">
-                <button (click)="changeComponent()">
-                    change component
-                </button>
-            </div>
-
-            <p data-qa="auto-data">{{ValueToPrint}}</p>
         </div>
+
+        <div class="centered spaced" data-qa="style change btn">
+            <button (click)="changeComponent()">
+                change component
+            </button>
+        </div>
+
+        <p data-qa="auto-data">{{ValueToPrint}}</p>
+
 
         <div class="centered spaced" data-qa="dis-comp">
             <button (click)="disableComponent()">

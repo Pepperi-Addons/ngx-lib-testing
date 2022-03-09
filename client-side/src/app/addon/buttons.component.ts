@@ -334,7 +334,7 @@ export class AddonComponentButtons implements OnInit {
                     case 'system':
                         switch (size) {
                             case 'xs':
-                                return "24x81";//changed to 81 (was 82)
+                                return "24x81";
                             case 'sm':
                                 return "32x89";
                             case 'md':
@@ -349,9 +349,9 @@ export class AddonComponentButtons implements OnInit {
                             case 'xs':
                                 return "24x81";
                             case 'sm':
-                                return "32x90";
+                                return "32x89";
                             case 'md':
-                                return "40x109";
+                                return "40x108";
                             case 'lg':
                                 return "48x119";
                             case 'xl':
@@ -362,7 +362,7 @@ export class AddonComponentButtons implements OnInit {
                             case 'xs':
                                 return "24x81";
                             case 'sm':
-                                return "32x90";
+                                return "32x89";
                             case 'md':
                                 return "40x108";
                             case 'lg':
@@ -391,11 +391,11 @@ export class AddonComponentButtons implements OnInit {
                             case 'xs':
                                 return "24x83";
                             case 'sm':
-                                return "32x91";//changed to 92 (was 91)
+                                return "32x91";
                             case 'md':
                                 return "40x110";
                             case 'lg':
-                                return "48x121";//changed to 122 (was 121)
+                                return "48x121";
                             case 'xl':
                                 return "64x159";
                         }
@@ -404,7 +404,7 @@ export class AddonComponentButtons implements OnInit {
                             case 'xs':
                                 return "24x83";
                             case 'sm':
-                                return "32x91";//changed to 92 (was 91)
+                                return "32x91";
                             case 'md':
                                 return "40x110";
                             case 'lg':
