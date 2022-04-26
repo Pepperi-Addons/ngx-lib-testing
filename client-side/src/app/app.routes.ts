@@ -6,13 +6,17 @@ import { AttachmentComponent } from "./addon/attachment.component";
 import { CheckboxComponent } from "./addon/checkbox.component";
 import { DateComponent } from "./addon/date.component";
 import { ColorComponent } from "./addon";
+import { GenericListComponent } from "./addon/genericList.component";
+import { GenericFormExampleComponent } from "./addon/genericForm.component";
+
+
 
 // Important for single spa
 @Component({
   selector: "app-empty-route",
   template: "<div></div>",
 })
-export class EmptyRouteComponent {}
+export class EmptyRouteComponent { }
 
 const routes: Routes = [
   {
@@ -38,6 +42,14 @@ const routes: Routes = [
         path: "Date",
         component: DateComponent,
       },
+      {
+        path: "GenericList",
+        component: GenericListComponent,
+      },
+      {
+        path: "GenericFrom",
+        component: GenericFormExampleComponent,
+      },
     ],
   },
   {
@@ -50,4 +62,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: "legacy" })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

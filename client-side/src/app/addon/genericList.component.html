@@ -1,0 +1,30 @@
+<pep-page-layout [addPadding]="true">
+    <ng-container pep-top-area>
+        <pep-top-bar title="NGX-lib Automation Testing Page">
+            <div header-start-content>
+                <!-- Add components you want after the title -->
+            </div>
+            <div header-end-content>
+                <!-- Add components you want at the right side -->
+            </div>
+        </pep-top-bar>
+    </ng-container>
+    <ng-container pep-main-area>
+        <h1>GENERIC LIST PLACE HOLDER</h1>
+        <div class="centered spaced" data-qa="next-test">
+            <button (click)="gotoGenricFrom()">
+                goto Generic From
+            </button>
+        </div>
+        <pep-generic-list [title]="'Evgeny Testzzz'" [inline]="false" [addPadding]="false" [showSearch]="true"
+            [dataSource]="dataSource" [zebraStripes]="true" [smartFilter]="smartFilter" [tableViewType]="'regular'"
+            [showSearch]="true" [showTopBar]="true">
+        </pep-generic-list>
+
+    </ng-container>
+</pep-page-layout>
+
+<!-- [dataSource]="dataSource"  -->
+<!-- [actions]="actions" -->
+<!-- [uuidMapping]="'Key'" -->
+<!-- [showTopBar]="true" -->

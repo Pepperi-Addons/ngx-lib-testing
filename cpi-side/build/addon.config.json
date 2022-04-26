@@ -1,6 +1,6 @@
 {
     "AddonUUID": "47db1b61-e1a7-42bd-9d55-93dd85044e91",
-    "AddonVersion": "0.0.0",
+    "AddonVersion": "0.0.92",
     "DebugPort": 4500,
     "WebappBaseUrl": "https://app.sandbox.pepperi.com",
     "DefaultEditor": "main",
@@ -15,9 +15,9 @@
         "ClientStack": "ng10",
         "Editors": [
             {
-                "ParentPackageName": "CHANGE_TO_ADDON_CONTAINER_NAME",
-                "PackageName": "CHANGE_TO_ADDON_PATH",
-                "Description": "CHANGE_TO_ADDON_DESCRIPTION"
+                "ParentPackageName": "NGX-Lib-Automation",
+                "PackageName": "Buttons",
+                "Description": "NGX-lib components"
             }
         ],
         "Dependencies": {},

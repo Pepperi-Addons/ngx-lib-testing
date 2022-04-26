@@ -153,6 +153,10 @@ export class DateComponent implements OnInit {
         }
     }
 
+    gotoGenricList() {
+        this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/GenericList`);
+    }
+
 
     gotoColor() {
         this.router.navigateByUrl(`settings/47db1b61-e1a7-42bd-9d55-93dd85044e91/Color`);
