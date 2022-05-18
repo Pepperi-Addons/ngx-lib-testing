@@ -41,6 +41,7 @@ import { CheckboxComponent } from "./index";
 import { PepCheckboxModule } from "@pepperi-addons/ngx-lib/checkbox";
 import { ColorComponent } from "./index";
 import { DateComponent } from "./index";
+import { TextBoxComponent } from "./index";
 import { GenericListComponent } from "./index";
 import { PepDateModule } from "@pepperi-addons/ngx-lib/date";
 import { GenericFormExampleComponent } from "./genericForm.component";
@@ -61,7 +62,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent, ColorComponent, DateComponent, GenericListComponent, GenericFormExampleComponent],
+  declarations: [AddonComponentButtons, AttachmentComponent, CheckboxComponent, ColorComponent, DateComponent, GenericListComponent, GenericFormExampleComponent,TextBoxComponent],
   imports: [
     CommonModule,
     HttpClientModule,

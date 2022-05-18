@@ -5,7 +5,7 @@ import { AddonComponentButtons } from "./addon/buttons.component";
 import { AttachmentComponent } from "./addon/attachment.component";
 import { CheckboxComponent } from "./addon/checkbox.component";
 import { DateComponent } from "./addon/date.component";
-import { ColorComponent } from "./addon";
+import { ColorComponent, TextBoxComponent } from "./addon";
 import { GenericListComponent } from "./addon/genericList.component";
 import { GenericFormExampleComponent } from "./addon/genericForm.component";
 
@@ -49,6 +49,10 @@ const routes: Routes = [
       {
         path: "GenericFrom",
         component: GenericFormExampleComponent,
+      },
+      {
+        path: "TextBox",
+        component: TextBoxComponent,
       },
     ],
   },

@@ -5,4 +5,5 @@ export * from "./color.component";
 export * from "./date.component";
 export * from "./genericList.component";
 export * from "./genericForm.component";
+export * from "./textBox.component";
 export * from "./addon.module";
